@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaloChale-Destination</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        :root {
+            --page-bg: #f5f8fc;
+            --ink: #183047;
+            --brand: #087e8b;
+        }
+
+        body {
+            background: var(--page-bg);
+            color: var(--ink);
+        }
+
+        .destinations-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            background: linear-gradient(125deg, #123449, #087e8b 65%, #46a99b);
+            color: #fff;
+        }
+
+        .destinations-hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 20rem;
+            height: 20rem;
+            right: -5rem;
+            top: -10rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 0 2.5rem rgba(255, 255, 255, 0.06), 0 0 0 5rem rgba(255, 255, 255, 0.04);
+        }
+
+        .destination-card {
+            overflow: hidden;
+            border: 0;
+            border-radius: 1rem;
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 2rem rgba(24, 48, 71, 0.14) !important;
+        }
+
+        .destination-card__image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            transition: transform 250ms ease;
+        }
+
+        .destination-card:hover .destination-card__image {
+            transform: scale(1.04);
+        }
+
+        .destination-card .card-body {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .destination-card .card-title {
+            font-size: clamp(1.2rem, 2vw, 1.4rem);
+        }
+
+        .destination-card .btn {
+            margin-top: auto;
+            background: var(--brand);
+            border-color: var(--brand);
+        }
+
+        .destination-card .btn:hover {
+            background: #066b76;
+            border-color: #066b76;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .destination-card,
+            .destination-card__image {
+                transition: none;
+            }
+
+            .destination-card:hover,
+            .destination-card:hover .destination-card__image {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">ChaloChale</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 py-2 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light btn-sm px-3 ms-lg-2" href="booking.html">Plan a trip</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light btn-sm px-3 ms-lg-2" href="login.html">Log In</a></li>
+                    <li class="nav-item"><a class="btn btn-primary btn-sm px-3" href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4 py-lg-5">
+        <section class="destinations-hero text-center p-4 p-md-5 mb-5">
+            <div class="mx-auto py-lg-3" style="max-width: 42rem;">
+                <p class="text-uppercase fw-semibold small mb-2">Find your next getaway</p>
+                <h1 class="display-5 fw-bold mb-3">India, waiting to be explored</h1>
+                <p class="lead mb-0">From breezy coastal drives to timeless landmarks, discover a place worth remembering.</p>
+            </div>
+        </section>
+
+        <section aria-labelledby="popular-destinations">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-end gap-2 mb-4">
+                <div>
+                    <p class="text-uppercase fw-semibold small text-success mb-1">Handpicked for you</p>
+                    <h2 id="popular-destinations" class="fw-bold mb-0">Popular destinations</h2>
+                </div>
+                <p class="text-secondary mb-0">Choose a destination and start planning.</p>
+            </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4">
+            <div class="col">
+                <article class="card destination-card h-100 shadow-sm">
+                    <img src="./assets/images/MarinDrive.png" class="destination-card__image"
+                        alt="Mumbai's Marine Drive along the Arabian Sea" loading="lazy" decoding="async">
+                    <div class="card-body p-4">
+                        <p class="small text-success fw-semibold text-uppercase mb-2">Mumbai, Maharashtra</p>
+                        <h3 class="card-title fw-bold">Marine Drive</h3>
+                        <p class="card-text text-secondary mb-4">Take in the sea breeze and sweeping city views along Mumbai's iconic waterfront promenade.</p>
+                        <a href="booking.html" class="btn btn-primary w-100">Explore Mumbai</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card destination-card h-100 shadow-sm">
+                    <img src="./assets/images/tajmahel.png" class="destination-card__image"
+                        alt="The white marble Taj Mahal in Agra" loading="lazy" decoding="async">
+                    <div class="card-body p-4">
+                        <p class="small text-success fw-semibold text-uppercase mb-2">Agra, Uttar Pradesh</p>
+                        <h3 class="card-title fw-bold">Taj Mahal</h3>
+                        <p class="card-text text-secondary mb-4">Experience the beauty and history of India's world-famous marble monument.</p>
+                        <a href="booking.html" class="btn btn-primary w-100">Explore Agra</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card destination-card h-100 shadow-sm">
+                    <img src="./assets/images/Hawamahel.png" class="destination-card__image"
+                        alt="The ornate pink facade of Hawa Mahal in Jaipur" loading="lazy" decoding="async">
+                    <div class="card-body p-4">
+                        <p class="small text-success fw-semibold text-uppercase mb-2">Jaipur, Rajasthan</p>
+                        <h3 class="card-title fw-bold">Hawa Mahal</h3>
+                        <p class="card-text text-secondary mb-4">Admire Jaipur's Palace of Winds and explore the color, craft, and culture of the Pink City.</p>
+                        <a href="booking.html" class="btn btn-primary w-100">Explore Jaipur</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-1 fw-semibold">ChaloChale</p>
+            <p class="mb-0 small text-white-50">&copy; 2026 ChaloChale Travel App. Made for your next journey.</p>
+            <a class="link-light small" href="contact.html">Contact us</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

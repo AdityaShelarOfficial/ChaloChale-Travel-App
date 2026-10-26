@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaloChale-packages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .package-card {
+            overflow: hidden;
+            border-radius: 1rem;
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 1rem 2rem rgba(33, 37, 41, 0.12) !important;
+        }
+
+        .package-card__visual {
+            min-height: 10rem;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.25rem;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .package-card__image {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 250ms ease;
+        }
+
+        .package-card:hover .package-card__image {
+            transform: scale(1.04);
+        }
+
+        .package-card__visual::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background: linear-gradient(transparent 35%, rgba(0, 0, 0, 0.55));
+        }
+
+        .package-card__visual--goa {
+            background: linear-gradient(135deg, #087e8b, #57c4ad 60%, #f2c078);
+        }
+
+        .package-card__visual--kashmir {
+            background: linear-gradient(135deg, #315c87, #81b7c8 60%, #d9e6d1);
+        }
+
+        .package-card__visual--kedarnath {
+            background: linear-gradient(135deg, #405c48, #9aaf7d 60%, #d6c4a1);
+        }
+
+        .package-card__tag {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        .package-card .card-title {
+            font-size: clamp(1.15rem, 2vw, 1.35rem);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .package-card {
+                transition: none;
+            }
+
+            .package-card:hover {
+                transform: none;
+            }
+
+            .package-card__image {
+                transition: none;
+            }
+
+            .package-card:hover .package-card__image {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">ChaloChale</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 py-2 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="packages.html">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light btn-sm px-3 ms-lg-2" href="booking.html">Plan a trip</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light btn-sm px-3 ms-lg-2" href="login.html">Log In</a></li>
+                    <li class="nav-item"><a class="btn btn-primary btn-sm px-3" href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <section class="py-5 bg-light text-center">
+            <div class="container">
+                <h1 class="fw-bold">
+                    ChaloChale Packages
+                </h1>
+                <p class="lead">
+                    Choose your perfect travel plan with ChaloChale.
+                </p>
+            </div>
+        </section>
+
+        <!-- Feature Packages Starts -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center fw-bold my-4">
+                    Featured Packages
+                </h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <article class="card package-card h-100 border-0 shadow-sm">
+                            <div class="package-card__visual package-card__visual--goa">
+                                <img class="package-card__image"
+                                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                                    alt="Tropical beach and turquoise water in Goa" loading="lazy" decoding="async">
+                                <span class="package-card__tag">Coastal escape</span>
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h3 class="card-title fw-bold">Goa Beach Package</h3>
+                                <p class="card-text text-secondary mb-4">
+                                    <span class="fw-semibold text-body">Duration:</span> 5 Days / 4 Nights
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="small text-secondary">Starting at</span>
+                                        <h4 class="text-success fw-bold mb-0">₹12,999</h4>
+                                    </div>
+                                    <button class="btn btn-primary w-100 mt-3" type="button">Book Goa Package</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article class="card package-card h-100 border-0 shadow-sm">
+                            <div class="package-card__visual package-card__visual--kashmir">
+                                <img class="package-card__image"
+                                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                                    alt="Snow-covered mountain peaks in Kashmir" loading="lazy" decoding="async">
+                                <span class="package-card__tag">Mountain retreat</span>
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h3 class="card-title fw-bold">Srinagar Kashmir Package</h3>
+                                <p class="card-text text-secondary mb-4">
+                                    <span class="fw-semibold text-body">Duration:</span> 10 Days / 9 Nights
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="small text-secondary">Starting at</span>
+                                        <h4 class="text-success fw-bold mb-0">₹29,999</h4>
+                                    </div>
+                                    <button class="btn btn-primary w-100 mt-3" type="button">Book Srinagar Package</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article class="card package-card h-100 border-0 shadow-sm">
+                            <div class="package-card__visual package-card__visual--kedarnath">
+                                <img class="package-card__image"
+                                    src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                                    alt="Ornate Indian temple architecture" loading="lazy" decoding="async">
+                                <span class="package-card__tag">Sacred journey</span>
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h3 class="card-title fw-bold">Kedarnath Mahadev Temple Package</h3>
+                                <p class="card-text text-secondary mb-4">
+                                    <span class="fw-semibold text-body">Duration:</span> 15 Days / 14 Nights
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="small text-secondary">Starting at</span>
+                                        <h4 class="text-success fw-bold mb-0">₹21,999</h4>
+                                    </div>
+                                    <button class="btn btn-primary w-100 mt-3" type="button">Book Kedarnath Package</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- feature packages endss -->
+
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-1 fw-semibold">ChaloChale</p>
+            <p class="mb-0 small text-white-50">&copy; 2026 ChaloChale Travel App. Made for your next journey.</p>
+            <a class="link-light small" href="contact.html">Contact us</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
